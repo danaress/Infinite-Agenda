@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+<head>
+	<title>Infinite Scroll</title>
+
+<link rel="stylesheet" type"text/css" href="main.css">
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+
+<script type="text/jquery" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ngInfiniteScroll/1.2.2/ng-infinite-scroll.min.js"></script>
+
+</head>
+<body ng-controller='numbersController'>
+
+
+<div>
+    <div infinite-scroll='loadMore()' infinite-scroll-distance='1'>
+        <img class="tile" ng-repeat='n in numbers' src="KimJongAccomplisedAngler.jpg">
+    </div>
+</div>
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
