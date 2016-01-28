@@ -1,15 +1,21 @@
 var myApp = angular.module('myApp', ['infinite-scroll']);
 
-var numbersController = function($scope){
-    $scope.numbers = [];
-    $scope.counter = 0;
+myApp.controller('numbersController', ['$scope', function($scope){
 
-    $scope.loadMore = function () {
-        for (var i = 0; i < 10; i++) {
-            $scope.numbers.push(++$scope.counter);
+    		$scope.counter = 0;
+    		$scope.numbers = [];
+    $scope.loadMore = function() {
+   			
+    
+        for (var i = 0; i < 5; i++) {
+        	var date = {
+    		counter : $scope.counter
+    		};
+        
+        	$scope.counter = $scope.counter + 1;
+            $scope.numbers.push(date);
+          
         };
-        console.log($scope.numbers);
     }
-    $scope.loadMore();
-}
-myApp.controller('numbersController', numbersController); 
+    
+}])

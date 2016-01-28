@@ -1,5 +1,8 @@
 .tile {
+	background-color: red;
+	width: 60%;
 	height: 100px;
-	width: auto;
+	margin-left: 20%;
+	margin-top: 35px;
 
 }
