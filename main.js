@@ -2,7 +2,7 @@ var myApp = angular.module('myApp', ['infinite-scroll']);
 
 myApp.controller('numbersController', ['$scope', function($scope){
 
-		    var today = new Date();
+		    $scope.today = new Date('2016', '00', '28');
 
     		$scope.counter = 0;
     		$scope.numbers = [];
@@ -14,7 +14,7 @@ myApp.controller('numbersController', ['$scope', function($scope){
             today : $scope.today
     		};
         
-            $scope.today = ($scope.today).setDate($scope.today.getDate() +1);
+            // $scope.today = $scope.today.setDate($scope.today.getDate() +1);
         	$scope.counter = $scope.counter + 1;
             $scope.numbers.push(box);
           
