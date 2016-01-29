@@ -10,7 +10,7 @@
 <script type="text/jquery" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ngInfiniteScroll/1.2.2/ng-infinite-scroll.min.js"></script>
-<script type="text/JavaScript" src="moment.js"></script>
+<!-- <script type="text/JavaScript" src="moment.js"></script> -->
 
 </head>
 <body ng-controller='numbersController'>
@@ -19,12 +19,18 @@
 
 
 	<div>
-    	<div infinite-scroll='loadMore()' infinite-scroll-distance='0'>
+    	<div class="tilebox" infinite-scroll='loadMore()' infinite-scroll-distance='0'>
         	<div class="tile" ng-repeat="box in numbers">
         		<h3 class="dateTitle">Date: {{box.today | date}}</h3>
-        		<button class="button" type="submit">Edit</button>
-        		<textarea class="notes"></textarea>
-        	</div>
+        		<button ng-click="addNote($index)" ng-show="noteButton"class="button" type="submit">Add Notes</button>
+
+<!--                 <button class="button" ng-click="submitNote()" ng-show="saveButton"class="button" type="submit">Save Notes</button> -->
+            <form>
+        		<textarea  ng-submit="submitNotes()" ng-hide="hideNotes" class="notes">{{box.notes}}</textarea>
+                <input ng-show="saveButton" ng-click="submitNote()" class="savebutton" type="submit" value="Save"></inpit>
+            </form>
+        	</div> 
+
     	</div>
 	</div>
 <script type="text/javascript" src="main.js"></script>
