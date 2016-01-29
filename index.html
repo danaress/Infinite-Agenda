@@ -21,7 +21,7 @@
 	<div>
     	<div infinite-scroll='loadMore()' infinite-scroll-distance='0'>
         	<div class="tile" ng-repeat="box in numbers">
-        		<h3 class="dateTitle">Date: {{box.today}}</h3>
+        		<h3 class="dateTitle">Date: {{box.today | date}}</h3>
         		<button class="button" type="submit">Edit</button>
         		<textarea class="notes"></textarea>
         	</div>

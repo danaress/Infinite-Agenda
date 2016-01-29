@@ -8,13 +8,15 @@ myApp.controller('numbersController', ['$scope', function($scope){
     		$scope.numbers = [];
     $scope.loadMore = function() {
    			
+            $scope.today = angular.copy($scope.today);
+
         for (var i = 0; i < 1; i++) {
         	var box = {
     		counter : $scope.counter,
             today : $scope.today
     		};
-        
-            // $scope.today = $scope.today.setDate($scope.today.getDate() +1);
+            console.log($scope.today.getDate);
+            $scope.today.setDate($scope.today.getDate() +1);
         	$scope.counter = $scope.counter + 1;
             $scope.numbers.push(box);
           
