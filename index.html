@@ -24,15 +24,15 @@
         		<h3 class="dateTitle">Date: {{box.today | date}}</h3>
         		<button ng-click="addNote($index)" ng-show="noteButton"class="button" type="submit">Add Notes</button>
 
-<!--                 <button class="button" ng-click="submitNote()" ng-show="saveButton"class="button" type="submit">Save Notes</button> -->
             <form>
         		<textarea  ng-submit="submitNotes()" ng-hide="hideNotes" class="notes">{{box.notes}}</textarea>
                 <input ng-show="saveButton" ng-click="submitNote()" class="savebutton" type="submit" value="Save"></inpit>
             </form>
-        	</div> 
 
+        	</div> 
     	</div>
 	</div>
+    
 <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
