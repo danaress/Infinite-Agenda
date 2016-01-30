@@ -48,12 +48,8 @@ body {
 	text-shadow: none;
 }
 
-.newnoteBox {
-	position: absolute;
-	margin-top: 100px;
-	color: red;
-	font-size: 12px;
-	background-color: #ecf0f1;
+.cssTest {
+	margin-top: 20px;
 }
 
 

@@ -23,13 +23,15 @@
            <div class="tile" ng-repeat="box in numbers">
                <h3 class="dateTitle">Date: {{box.today | date}}</h3>
                <button ng-click="addNote(box)" ng-show="box.noteButton" class="button" type="submit">Add Notes</button>
-               <div ng-repeat="note in box.notes" class="newnoteBox">{{note}}</div>
+            <div class="cssTest">
+                  <div ng-repeat="note in box.notes" class="newnoteBox">{{note}}</div>
+            </div>
            <form ng-show="box.hideNotes" ng-submit="submitNote(box)">
                <textarea ng-show="box.hideNotes" ng-model="box.newNote" class="noteBox"></textarea>
                <input class="savebutton" class="notes" type="submit" value="Save"></inpit>
            </form>
 
-           </div> 
+            
        </div>
     </div>
    
