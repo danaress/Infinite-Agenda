@@ -2,64 +2,80 @@ var myApp = angular.module('myApp', ['infinite-scroll']);
 
 myApp.controller('numbersController', ['$scope', function($scope){
 
-            // Hiding/Showing elements
+           // Hiding/Showing elements
 
-            $scope.hideNotes = true;
-            $scope.noteButton = true;
-            $scope.saveButton = false;
-            $scope.notes = '';
+            // $scope.balls = {
 
-            // Switching hide/show when "Add Notes" is clicked
+            //     hideNotes : true,
+            //     noteButton : true,
+            //     saveButton : false,
+            //     newnotehide : false,
+            //     notes : ''
+            // }
 
-            $scope.addNote = function(){
-                $scope.hideNotes = false;
-                $scope.noteButton = false;
-                $scope.saveButton = true;
-            }
+           // Switching hide/show when "Add Notes" is clicked
 
-            // Saving Notes ng-click
 
-            $scope.submitNote = function() {
-                $scope.saveButton = false;
-                $scope.noteButton = true;
-                $scope.hideNotes = true;
-            }
+// add or edit mode
+// view mode
+// New note
 
-            // Trying to save notes into an object
+//ng-hide='view-mode'   -> save, textarea
+// ng-show='view-mode'  -> add notes
+           $scope.addNote = function(box){
+               box.hideNotes = false;
+               box.noteButton = false;
+               box.saveButton = true;
+               console.log(box)
+           }
 
-            var notenum = '';
-            $scope.submitNote = function(){
-                $scope.box.notes.push($index);
-            }
+           // Saving Notes ng-click
 
-            // Setting Date and counter
+           $scope.submitNote = function(box) {
+               box.saveButton = false;
+               box.noteButton = true;
+               box.hideNotes = true;
+              box.notes.push(box.newNote);
 
-		    $scope.today = new Date('2016', '00', '28');
-    		$scope.counter = 0;
-    		$scope.numbers = [];
+           }
 
-            // Infinite scroll function addnig boxes
+           // Trying to save notes into an object
 
-    $scope.loadMore = function() {
-   			
-            $scope.today = angular.copy($scope.today);
+           var notenum = '';
+           // $scope.submitNote = function(box){
+           // }
 
-        for (var i = 0; i < 1; i++) {
-        	var box = {
-    		counter : $scope.counter,
-            today : $scope.today,
-            notes : notenum
-    		};
+           // Setting Date and counter
 
-            // Console.logs and counter / Date increment
+           $scope.today = new Date('2016', '00', '28');
+           $scope.counter = 0;
+           $scope.numbers = [];
 
-            console.log(box);
-            console.log($scope.today.getDate);  
-            $scope.today.setDate($scope.today.getDate() +1);
-        	$scope.counter = $scope.counter + 1;
-            $scope.numbers.push(box);
-          
-        };
-    }
-    
+           // Infinite scroll function addnig boxes
+
+   $scope.loadMore = function() {
+              
+           $scope.today = angular.copy($scope.today);
+
+       for (var i = 0; i < 1; i++) {
+           var box = {
+               counter : $scope.counter,
+               today : $scope.today,
+               notes : [],
+               hideNotes : true,
+               noteButton : true,
+               saveButton : false
+           };
+
+           // Console.logs and counter / Date increment
+
+           console.log(box);
+           console.log($scope.today.getDate);  
+           $scope.today.setDate($scope.today.getDate() +1);
+           $scope.counter = $scope.counter + 1;
+           $scope.numbers.push(box);
+         
+       };
+   }
+   
 }])

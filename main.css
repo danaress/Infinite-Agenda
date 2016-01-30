@@ -24,6 +24,9 @@ body {
 
 	background-color: #ecf0f1;
 }
+.noteBox {
+	float: right;
+}
 
 .dateTitle {
 	margin-left: 5px;
@@ -51,7 +54,14 @@ body {
 	text-shadow: none;
 }
 
-
+.newnoteBox {
+	float: right;
+	color: red;
+	background-color: #ecf0f1;
+	height: 70px;
+	width: 20%;
+	margin-right: 20px;
+}
 
 
 

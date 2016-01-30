@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app='myApp'>
 <head>
-	<title>Infinite Scroll</title>
+    <title>Infinite Scroll</title>
 
 <link rel="stylesheet" type"text/css" href="main.css">
 
@@ -15,24 +15,24 @@
 </head>
 <body ng-controller='numbersController'>
 
-	<h1 class="header">Calendar</h1>
+    <h1 class="header">Calendar</h1>
 
 
-	<div>
-    	<div class="tilebox" infinite-scroll='loadMore()' infinite-scroll-distance='0'>
-        	<div class="tile" ng-repeat="box in numbers">
-        		<h3 class="dateTitle">Date: {{box.today | date}}</h3>
-        		<button ng-click="addNote($index)" ng-show="noteButton"class="button" type="submit">Add Notes</button>
+    <div>
+       <div class="tilebox" infinite-scroll='loadMore()' infinite-scroll-distance='0'>
+           <div class="tile" ng-repeat="box in numbers">
+               <h3 class="dateTitle">Date: {{box.today | date}}</h3>
+               <button ng-click="addNote(box)" ng-show="box.noteButton"class="button" type="submit">Add Notes</button>
+               <div ng-repeat="note in box.notes" class="newnoteBox">{{note}}</div>
+           <form ng-submit="submitNote(box)">
+               <textarea ng-hide="box.hideNotes" ng-model="box.newNote" class="noteBox"></textarea>
+               <input class="savebutton" class="notes" type="submit" value="Save"></inpit>
+           </form>
 
-            <form>
-        		<textarea  ng-submit="submitNotes()" ng-hide="hideNotes" class="notes">{{box.notes}}</textarea>
-                <input ng-show="saveButton" ng-click="submitNote()" class="savebutton" type="submit" value="Save"></inpit>
-            </form>
-
-        	</div> 
-    	</div>
-	</div>
-    
+           </div> 
+       </div>
+    </div>
+   
 <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
