@@ -4,46 +4,24 @@ myApp.controller('numbersController', ['$scope', function($scope){
 
            // Hiding/Showing elements
 
-            // $scope.balls = {
-
-            //     hideNotes : true,
-            //     noteButton : true,
-            //     saveButton : false,
-            //     newnotehide : false,
-            //     notes : ''
-            // }
-
-           // Switching hide/show when "Add Notes" is clicked
-
-
-// add or edit mode
-// view mode
-// New note
-
 //ng-hide='view-mode'   -> save, textarea
 // ng-show='view-mode'  -> add notes
-           $scope.addNote = function(box){
-               box.hideNotes = false;
-               box.noteButton = false;
-               box.saveButton = true;
-               console.log(box)
-           }
 
-           // Saving Notes ng-click
+            $scope.addNote = function(box) {
+             box.noteButton = false,
+             box.hideNotes = true
+            };
 
-           $scope.submitNote = function(box) {
-               box.saveButton = false;
-               box.noteButton = true;
-               box.hideNotes = true;
+            $scope.submitNote = function(box) {
+              box.noteButton = true;
+              box.hideNotes = false;
+              console.log(box.newNote);
               box.notes.push(box.newNote);
-
-           }
+            };
 
            // Trying to save notes into an object
 
            var notenum = '';
-           // $scope.submitNote = function(box){
-           // }
 
            // Setting Date and counter
 
@@ -62,9 +40,8 @@ myApp.controller('numbersController', ['$scope', function($scope){
                counter : $scope.counter,
                today : $scope.today,
                notes : [],
-               hideNotes : true,
-               noteButton : true,
-               saveButton : false
+               hideNotes : false,
+               noteButton : true, 
            };
 
            // Console.logs and counter / Date increment

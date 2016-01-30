@@ -2,7 +2,7 @@
 .tile {
 	background-color: #ecf0f1;
 	width: 50%;
-	height: 100px;
+	height: 200px;
 	margin-left: 10%;
 	margin-top: 35px;
 	/*border-radius: 15px;*/
@@ -25,19 +25,13 @@ body {
 	background-color: #ecf0f1;
 }
 .noteBox {
+	display: inline-block;
+	margin-right: 10px;
 	float: right;
 }
 
 .dateTitle {
 	margin-left: 5px;
-}
-
-.notes {
-	float: right;
-	height: 45px;
-	width: 200px;
-	margin-top: -20px;
-	margin-right: 20px;
 }
 
 .button {
@@ -55,12 +49,11 @@ body {
 }
 
 .newnoteBox {
-	float: right;
+	position: absolute;
+	margin-top: 100px;
 	color: red;
+	font-size: 12px;
 	background-color: #ecf0f1;
-	height: 70px;
-	width: 20%;
-	margin-right: 20px;
 }
 
 
